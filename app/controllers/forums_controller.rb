@@ -5,6 +5,6 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
-    # @posts = @forum.posts.all
+    @threads = @forum.forum_threads.all
   end
 end
