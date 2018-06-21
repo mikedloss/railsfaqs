@@ -5,12 +5,14 @@
 
 .forum-card {
   margin: 10px 0;
-  box-shadow: none;
-  border: 1px solid rgba(10, 10, 10, 0.1)
+  box-shadow: -5px 5px $main-blue;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 5px;
 }
 
 .forum-title {
   @include subtitle;
+  color: $dark-blue;
   font-weight: 700;
 }
 
