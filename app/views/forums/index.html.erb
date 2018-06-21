@@ -1,0 +1,24 @@
+<div class='container'>
+  <%# <h1 class='title'>Forums</h1> %>
+  <hr />
+  <% if @forums.size == 0 %>
+    <p>Nothing here!</p>
+  <% else %>
+    <% @forums.each do |forum| %>
+      <div class='card forum-card'>
+        <div class='card-content'>
+          <div class='columns'>
+            <div class='column is-four-fifths'>
+              <p class='forum-title'><%= forum.name %></p>
+              <p>description</p>
+            </div>
+            <div class='column'>
+              <%= link_to 'Visit >>', forum, class: 'visit-forum-link' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

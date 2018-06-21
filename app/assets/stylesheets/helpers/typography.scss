@@ -1,0 +1,21 @@
+@import "./colors";
+
+$title-font-size: 2em;
+$title-font-weight: 700;
+
+$subtitle-font-size: 1.3em;
+$subtitle-font-weight: 500;
+
+@mixin title {
+  margin: 0 !important;
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+  color: $main-blue;
+}
+
+@mixin subtitle {
+  margin: 0 !important;
+  font-size: $subtitle-font-size;
+  font-weight: $subtitle-font-weight;
+  color: $main-blue;
+}

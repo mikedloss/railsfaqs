@@ -1,0 +1,13 @@
+@import "../helpers/index";
+
+.navbar {
+  border-bottom: 2px solid $main-blue;
+}
+
+.navbar-brand {
+  .navbar-item {
+    font-weight: 700;
+    font-size: 1.4em;
+    text-transform: uppercase;
+  }
+}

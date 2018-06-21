@@ -1,0 +1,31 @@
+// Place all the styles related to the Forums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./helpers/index";
+
+.forum-card {
+  margin: 10px 0;
+  box-shadow: none;
+  border: 1px solid rgba(10, 10, 10, 0.1)
+}
+
+.forum-title {
+  @include subtitle;
+  font-weight: 700;
+}
+
+.visit-forum-link {
+  padding: 5px 10px;
+  border: 2px solid $main-blue;
+  border-radius: 10px;
+  color: #4a4a4a;
+  font-weight: 500;
+  box-shadow: -5px 5px $main-blue;
+
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    border: 2px solid $main-pink;
+    box-shadow: -5px 5px $main-pink;
+  }
+}
