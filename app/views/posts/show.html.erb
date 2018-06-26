@@ -1,0 +1,30 @@
+<div class='container'>
+  <%= link_to @forum, class: "button" do %>
+    <p><%= fa_icon "arrow-left" %> See all posts in <%= @forum.name %></p>
+  <% end %>
+
+  <h1 class='title'><%= @post.title %></h1>
+  <p><%= @post.content %></p>
+
+  <hr />
+  
+  <button class="button">Add New Comment</button>
+  <br />
+  <% if @comments.size == 0 %>
+    <p>No comments yet!</p>
+  <% else %>
+    <% @comments.each do |comment| %>
+      <div class='card'>
+        <div class='card-content'>
+          <%= comment.content %>
+          <p class='is-size-7'>
+            Posted on <%= comment.created_at.to_formatted_s(:short) %>
+            <% if comment.created_at != comment.updated_at %>
+              , Last updated on <%= comment.updated_at.to_formatted_s(:short) %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

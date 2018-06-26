@@ -1,6 +1,7 @@
 <div class='container'>
   <%# <h1 class='title'>Forums</h1> %>
   <hr />
+  <%= button_to "Create new Forum", new_forum_path, method: :get, class: "button" %>
   <% if @forums.size == 0 %>
     <p>Nothing here!</p>
   <% else %>
@@ -10,7 +11,7 @@
           <div class='columns'>
             <div class='column is-four-fifths'>
               <p class='forum-title'><%= forum.name %></p>
-              <p>description</p>
+              <p><%= forum.description %></p>
             </div>
             <div class='column'>
               <%= link_to 'Visit >>', forum, class: 'visit-forum-link' %>

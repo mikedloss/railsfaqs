@@ -1,24 +1,35 @@
 <div class='container'>
   <h1 class='title forum-title'><%= @forum.name %></h1>
-  <p>description</p>
+  <p><%= @forum.description %></p>
   <hr />
-  <button type="button" class="button">New Thread</button>
-  <% if @threads.size == 0 %>
+  <button type="button" class="button">New Post</button>
+  <% if @posts.size == 0 %>
     <p>No posts here!</p>
   <% else %>
-    <div class='forum-threads'>
-      <% @threads.each do |thread| %>
-        <div class='card'>
+    <div class='forum-posts'>
+      <% @posts.each do |post| %>
+        <div class='card visit-post'>
           <div class='card-content'>
             <div class='columns'>
-              <div class='column is-8'>
-                <p><%= thread.title %></p>
+              <div class='column is-7'>
+                <%= link_to post_path(@forum.id, post.id) do %>
+                  <p class='post-title-link'><%= post.title %></p>
+                <% end %>
+              </div>
+              <div class="column is-1">
+                <%= fa_icon "comment", 
+                  class: 'comment-bubble', 
+                  text: post.comments.length if post.comments.length != 0 %>
               </div>
               <div class='column is-2'>
                 <p>username</p>
               </div>
               <div class='column is-2'>
-                <p>1/1/2018 12:00 AM</p>
+                <% if post.comments.blank? %>
+                  <p><%= post.created_at.strftime("%m/%d/%y %H:%M") %></p>
+                <% else %>
+                  <p><%= post.comments.last.created_at.strftime("%m/%d/%y %H:%M") %></p>
+                <% end %>
               </div>
             </div>
           </div>
@@ -26,6 +37,4 @@
       <% end %>
     </div>
   <% end %>
-    
-</button>
-
+</div>

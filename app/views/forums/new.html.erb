@@ -1,0 +1,29 @@
+<div class='container'>
+  <h1 class='title'>New Forum</h1>
+  <hr />
+  <%= form_for @forum, html: { class: "new_forum_form" } do |f| %>
+    <div class="field">
+      <%= f.label :name, class: "label" %>
+      <p class="help">What's the name of this new forum?</p>
+      <div class="control">
+        <%= f.text_field :name, class: "input" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :description, class: "label" %>
+      <p class="help">Make it something useful, will ya?</p>
+      <div class="control">
+        <%= f.text_field :description, class: "input" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <%= f.submit "Create", class: "button is-link" %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+

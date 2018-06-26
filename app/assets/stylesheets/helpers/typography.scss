@@ -19,3 +19,11 @@ $subtitle-font-weight: 500;
   font-weight: $subtitle-font-weight;
   color: $main-blue;
 }
+
+@mixin pink-hover-transition {
+  transition: 0.1s all ease-in-out;
+  &:hover {
+    border: 2px solid $main-pink;
+    box-shadow: -5px 5px $main-pink;
+  }
+}
