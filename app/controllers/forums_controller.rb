@@ -5,7 +5,7 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
-    @posts = @forum.posts.all
+    @posts = @forum.posts.all.order("updated_at DESC")
   end
 
   def new

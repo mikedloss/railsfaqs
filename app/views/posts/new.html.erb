@@ -1,0 +1,29 @@
+<div class='container'>
+  <h1 class='title'>New Post in <%= @forum.name %></h1>
+  <hr />
+  <%= form_for @post, html: { class: "new_post_form" } do |f| %>
+    <div class="field">
+      <%= f.label :title, class: "label" %>
+      <p class="help">What's the title of your post?</p>
+      <div class="control">
+        <%= f.text_field :title, class: "input" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :content, class: "label" %>
+      <p class="help">What's your post about? Entertain us.</p>
+      <div class="control">
+        <%= f.text_area :content, rows: 12, class: "textarea" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <%= f.submit "Create", class: "button is-link" %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+

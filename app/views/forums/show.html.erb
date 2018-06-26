@@ -2,7 +2,7 @@
   <h1 class='title forum-title'><%= @forum.name %></h1>
   <p><%= @forum.description %></p>
   <hr />
-  <button type="button" class="button">New Post</button>
+  <%= button_to "Create new Post", new_post_path(@forum), method: :get, class: "button" %>
   <% if @posts.size == 0 %>
     <p>No posts here!</p>
   <% else %>
